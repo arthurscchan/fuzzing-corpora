@@ -9,6 +9,7 @@ Corpora for fuzzing parts of the strongSwan code base
 - **ocsp_rsp**: OCSP responses, initially 4 files in DER format derived from the strongSwan KVM regression tests
 - **pa_tnc**: RFC 5792 PA-TNC messages, initially 18 messages derived from the strongSwan KVM regression tests
 - **pb_tnc**: RFC 5793 PB-TNC batches, initially 6 batches derived from the strongSwan KVM regression tests
+- **tls**: TLS message exchange, initially 5 files in different TLS format, derived from the strongSwan libtls unit tests
 
 The `*-crash` directories contain input generated while fuzzing that caused crashes (or timeouts etc.).
 
