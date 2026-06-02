@@ -9,6 +9,7 @@ Corpora for fuzzing parts of the strongSwan code base
 - **ocsp_rsp**: OCSP responses, initially 4 files in DER format derived from the strongSwan KVM regression tests
 - **pa_tnc**: RFC 5792 PA-TNC messages, initially 18 messages derived from the strongSwan KVM regression tests
 - **pb_tnc**: RFC 5793 PB-TNC batches, initially 6 batches derived from the strongSwan KVM regression tests
+- **radius**: RFC 2865/3579/5997 RADIUS messages, initially 10 hand-crafted messages covering Access-Request/Accept/Reject/Challenge, Accounting-Request, Status-Server, encrypted User-Password, Vendor-Specific Attributes, fragmented EAP-Message, CHAP-Password and Message-Authenticator (signed with shared secret "testing123" and request authenticator 01:02:..:10 matching `fuzz_radius`)
 
 The `*-crash` directories contain input generated while fuzzing that caused crashes (or timeouts etc.).
 
