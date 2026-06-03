@@ -9,6 +9,7 @@ Corpora for fuzzing parts of the strongSwan code base
 - **ocsp_rsp**: OCSP responses, initially 4 files in DER format derived from the strongSwan KVM regression tests
 - **pa_tnc**: RFC 5792 PA-TNC messages, initially 18 messages derived from the strongSwan KVM regression tests
 - **pb_tnc**: RFC 5793 PB-TNC batches, initially 6 batches derived from the strongSwan KVM regression tests
+- **simaka**: EAP-SIM (RFC 4186) and EAP-AKA (RFC 4187) messages, initially 10 hand-crafted samples covering SIM_START, SIM_CHALLENGE, AKA_CHALLENGE, AKA_AUTHENTICATION_REJECT, AKA_SYNCHRONIZATION_FAILURE, AKA_IDENTITY, AKA_NOTIFICATION, AKA_REAUTHENTICATION and AT_ENCR_DATA / AT_IV combinations exercised by `fuzz_simaka`
 
 The `*-crash` directories contain input generated while fuzzing that caused crashes (or timeouts etc.).
 
