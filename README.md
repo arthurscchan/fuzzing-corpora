@@ -12,6 +12,7 @@ Corpora for fuzzing parts of the strongSwan code base
 - **pkcs7**: PKCS#7/CMS containers in DER format, initially 5 hand-crafted samples covering SignedData (attached and detached), EnvelopedData (AES-256 and 3DES content encryption) and a cert-only PKCS#7 bag, signed/encrypted against the embedded RSA-2048 test certificate in `fuzz_pkcs7`
 - **pkcs8**: PKCS#8 private keys in DER format, initially 4 samples covering an unencrypted key, PBES2 with AES-256-CBC, PBES2 with 3DES and legacy PBES1 with SHA1-3DES, all encrypted with passphrase `fuzz` matching `fuzz_pkcs8`
 - **pkcs12**: PKCS#12 containers, initially 4 samples covering AES-256-CBC with SHA-256 MAC, legacy PBE-SHA1-3DES, a multi-certificate chain, and a bundle with friendlyName and CSP attribute, all encrypted with passphrase `fuzz` matching `fuzz_pkcs12`
+- **tls**: TLS messages (prefixed with 0x00 for server replies and 0x01 for client requests), initially 10 files derived from the strongSwan libtls unit tests
 
 The `*-crash` directories contain input generated while fuzzing that caused crashes (or timeouts etc.).
 
