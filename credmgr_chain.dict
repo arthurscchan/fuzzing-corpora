@@ -1,0 +1,125 @@
+# Selector byte values (online flag + peer_id_idx)
+"\x00"
+"\x01"
+"\x02"
+"\x03"
+"\x05"
+"\x07"
+"\x09"
+"\x0b"
+
+# ASN.1 SEQUENCE / SET / OID / INTEGER / OCTET / UTC / GENTIME / BIT / NULL
+"\x30\x82"
+"\x30\x81"
+"\xa0\x03"
+"\xa3"
+"\x02\x01\x02"
+"\x06\x03"
+"\x06\x05"
+"\x06\x07"
+"\x06\x08"
+"\x06\x09"
+"\x04\x14"
+"\x05\x00"
+"\x03\x82"
+"\x17\x0d"
+"\x18\x0f"
+
+# Cert extension OIDs (bytes after 0x06 LEN)
+# basicConstraints 2.5.29.19
+"\x06\x03\x55\x1d\x13"
+# keyUsage 2.5.29.15
+"\x06\x03\x55\x1d\x0f"
+# subjectKeyIdentifier 2.5.29.14
+"\x06\x03\x55\x1d\x0e"
+# authorityKeyIdentifier 2.5.29.35
+"\x06\x03\x55\x1d\x23"
+# subjectAltName 2.5.29.17
+"\x06\x03\x55\x1d\x11"
+# issuerAltName 2.5.29.18
+"\x06\x03\x55\x1d\x12"
+# extKeyUsage 2.5.29.37
+"\x06\x03\x55\x1d\x25"
+# certificatePolicies 2.5.29.32
+"\x06\x03\x55\x1d\x20"
+# policyMappings 2.5.29.33
+"\x06\x03\x55\x1d\x21"
+# nameConstraints 2.5.29.30 (-> constraints_validator hot path)
+"\x06\x03\x55\x1d\x1e"
+# policyConstraints 2.5.29.36
+"\x06\x03\x55\x1d\x24"
+# CRLDistributionPoints 2.5.29.31 (-> revocation_validator path)
+"\x06\x03\x55\x1d\x1f"
+# inhibitAnyPolicy 2.5.29.54
+"\x06\x03\x55\x1d\x36"
+# freshestCRL 2.5.29.46
+"\x06\x03\x55\x1d\x2e"
+# authorityInfoAccess 1.3.6.1.5.5.7.1.1 (-> OCSP responder URL)
+"\x06\x08\x2b\x06\x01\x05\x05\x07\x01\x01"
+# id-pe-acmeIdentifier and similar 1.3.6.1.5.5.7
+"\x06\x08\x2b\x06\x01\x05\x05\x07"
+
+# Signature algorithm OIDs
+# sha256WithRSAEncryption 1.2.840.113549.1.1.11
+"\x06\x09\x2a\x86\x48\x86\xf7\x0d\x01\x01\x0b"
+# sha1WithRSAEncryption 1.2.840.113549.1.1.5
+"\x06\x09\x2a\x86\x48\x86\xf7\x0d\x01\x01\x05"
+# sha384WithRSAEncryption 1.2.840.113549.1.1.12
+"\x06\x09\x2a\x86\x48\x86\xf7\x0d\x01\x01\x0c"
+# sha512WithRSAEncryption 1.2.840.113549.1.1.13
+"\x06\x09\x2a\x86\x48\x86\xf7\x0d\x01\x01\x0d"
+# rsaEncryption 1.2.840.113549.1.1.1
+"\x06\x09\x2a\x86\x48\x86\xf7\x0d\x01\x01\x01"
+# rsassa-pss 1.2.840.113549.1.1.10
+"\x06\x09\x2a\x86\x48\x86\xf7\x0d\x01\x01\x0a"
+# ecdsa-with-SHA256 1.2.840.10045.4.3.2
+"\x06\x08\x2a\x86\x48\xce\x3d\x04\x03\x02"
+# ecdsa-with-SHA384 1.2.840.10045.4.3.3
+"\x06\x08\x2a\x86\x48\xce\x3d\x04\x03\x03"
+# id-ecPublicKey 1.2.840.10045.2.1
+"\x06\x07\x2a\x86\x48\xce\x3d\x02\x01"
+# id-Ed25519 1.3.101.112
+"\x06\x03\x2b\x65\x70"
+# id-Ed448 1.3.101.113
+"\x06\x03\x2b\x65\x71"
+
+# Common subject DN attribute OIDs
+# countryName 2.5.4.6
+"\x06\x03\x55\x04\x06"
+# organizationName 2.5.4.10
+"\x06\x03\x55\x04\x0a"
+# organizationalUnitName 2.5.4.11
+"\x06\x03\x55\x04\x0b"
+# commonName 2.5.4.3
+"\x06\x03\x55\x04\x03"
+# emailAddress 1.2.840.113549.1.9.1
+"\x06\x09\x2a\x86\x48\x86\xf7\x0d\x01\x09\x01"
+
+# EKU OIDs (constraints validator inspects these)
+# serverAuth 1.3.6.1.5.5.7.3.1
+"\x06\x08\x2b\x06\x01\x05\x05\x07\x03\x01"
+# clientAuth 1.3.6.1.5.5.7.3.2
+"\x06\x08\x2b\x06\x01\x05\x05\x07\x03\x02"
+# ipsecIKE 1.3.6.1.5.5.7.3.17
+"\x06\x08\x2b\x06\x01\x05\x05\x07\x03\x11"
+# ocspSigning 1.3.6.1.5.5.7.3.9
+"\x06\x08\x2b\x06\x01\x05\x05\x07\x03\x09"
+# codeSigning 1.3.6.1.5.5.7.3.3
+"\x06\x08\x2b\x06\x01\x05\x05\x07\x03\x03"
+
+# Critical-extension marker (BOOLEAN TRUE)
+"\x01\x01\xff"
+# Boolean FALSE
+"\x01\x01\x00"
+
+# Common GeneralName tag bytes for SAN
+"\x82"
+"\x81"
+"\x86"
+"\x87"
+"\xa4"
+
+# PEM headers (in case mutator drifts into ASCII)
+"-----BEGIN CERTIFICATE-----"
+"-----END CERTIFICATE-----"
+"-----BEGIN X509 CRL-----"
