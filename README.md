@@ -10,6 +10,7 @@ Corpora for fuzzing parts of the strongSwan code base
 - **pa_tnc**: RFC 5792 PA-TNC messages, initially 18 messages derived from the strongSwan KVM regression tests
 - **pb_tnc**: RFC 5793 PB-TNC batches, initially 6 batches derived from the strongSwan KVM regression tests
 - **vici**: VICI wire-format messages, initially 10 hand-crafted samples covering an empty message, single key-value, nested sections, lists of proposals, empty sections and lists, long values and sequential sections, exercising the wire-framing parser used by `fuzz_vici`
+- **tls**: TLS messages (prefixed with 0x00 for server replies and 0x01 for client requests), initially 10 files derived from the strongSwan libtls unit tests
 
 The `*-crash` directories contain input generated while fuzzing that caused crashes (or timeouts etc.).
 
