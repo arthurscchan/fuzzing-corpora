@@ -1,0 +1,82 @@
+# EAP codes (RFC 3748)
+"\x01"
+"\x02"
+"\x03"
+"\x04"
+
+# EAP type codes (the byte after the length field)
+"\x01"
+"\x02"
+"\x03"
+"\x04"
+"\x05"
+"\x06"
+"\x0d"
+"\x15"
+"\x19"
+"\x1a"
+"\x2b"
+"\xfe"
+
+# EAP-MSCHAPv2 OpCodes
+"\x1a\x01"
+"\x1a\x02"
+"\x1a\x03"
+"\x1a\x04"
+"\x1a\x07"
+
+# Common EAP-MSCHAPv2 MS-Length / Value-Size combinations
+"\x1a\x01\x01\x00\x16"
+"\x1a\x02\x01\x00\x42"
+"\x1a\x03\x01"
+"\x1a\x04\x01"
+
+# EAP-MD5 Value-Size = 16 (the only RFC-defined value)
+"\x04\x10"
+
+# EAP-Nak desired-type lists
+"\x03\x04"
+"\x03\x0d"
+"\x03\x15"
+"\x03\x19"
+"\x03\x1a"
+
+# EAP-Expanded type vendor IDs
+"\xfe\x00\x00\x00"
+"\xfe\x00\x01\x37"
+"\xfe\x00\x90\x2c"
+
+# Length-field templates (BE, common message sizes)
+"\x00\x04"
+"\x00\x05"
+"\x00\x06"
+"\x00\x15"
+"\x00\x42"
+"\x00\x4f"
+"\x02\x22"
+
+# EAP-Identity prompts and common identity tokens
+"@strongswan.org"
+"@example.com"
+"alice"
+"DOMAIN\\"
+
+# EAP-MSCHAPv2 message format markers in Success/Failure messages
+"E=691"
+"E=646"
+"E=647"
+"E=648"
+"E=649"
+"E=691"
+"R=0"
+"R=1"
+"C="
+"V=3"
+"M="
+"S="
+
+# Common UTF-8 BOMs and quoting bytes that show up in identity strings
+"\xef\xbb\xbf"
+
+# Microsoft vendor ID (used in expanded EAP types)
+"\x00\x01\x37"
