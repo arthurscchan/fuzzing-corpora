@@ -3,6 +3,7 @@ Corpora for fuzzing parts of the strongSwan code base
 
 - **certs**: X.509 certificates, initially 1000 files, half of them in DER and half of them im PEM format (obtained from certificate-transparency.org)
 - **crls**: X.509 CRLs, initially 190 files in DER format, four in PEM format, one empty and five HTML error pages (obtained from certificates from certificate-transparency.org)
+- **dns_credential**: DNS resource-record RDATA for `fuzz_dns_credential`, initially 26 hand-crafted seeds. Each seed is a 1-byte selector (indexing CERT / IPSECKEY / A / AAAA / SSHFP / DNSKEY / ANY / 0) followed by RDATA bytes. Covers RFC 4398 CERT RR variants (PKIX, SPKI, PGP, IPKIX, URI, OID types) and RFC 4025 IPSECKEY RR variants (gateway types 0–3 with IPv4 / IPv6 / DNS-encoded domain, algorithms 0–3, precedence boundaries), plus wrong-type crossover seeds (CERT RDATA with selector=A, etc.) and truncated/malformed edge cases
 - **ids**: Identification strings/blobs, initially 21 identities from the strongSwan unit tests
 - **ike**: IKE protocol messages, initially 10 files covering IKEv2 with various exchange types, derived from the strongSwan unit tests
 - **ocsp_req**: OCSP requests, initially 2 files in DER format derived from the strongSwan KVM regression tests
