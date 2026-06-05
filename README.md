@@ -3,6 +3,7 @@ Corpora for fuzzing parts of the strongSwan code base
 
 - **certs**: X.509 certificates, initially 1000 files, half of them in DER and half of them im PEM format (obtained from certificate-transparency.org)
 - **crls**: X.509 CRLs, initially 190 files in DER format, four in PEM format, one empty and five HTML error pages (obtained from certificates from certificate-transparency.org)
+- **esp**: Raw IP packets for `fuzz_esp`, initially 18 hand-crafted frames covering IPv4 and IPv6 with ESP (next-header 50) at various SPI/sequence positions, plus TCP/UDP/ICMP next-headers, IP fragmentation, IPv4 options, IPv6 Hop-by-Hop extension, and malformed-length edge cases (truncated header, IHL overrun, total-length undershoot, unsupported version)
 - **ids**: Identification strings/blobs, initially 21 identities from the strongSwan unit tests
 - **ike**: IKE protocol messages, initially 10 files covering IKEv2 with various exchange types, derived from the strongSwan unit tests
 - **ocsp_req**: OCSP requests, initially 2 files in DER format derived from the strongSwan KVM regression tests
